@@ -33,6 +33,7 @@ import numpy as np
 from psi4 import core
 
 
-def run_rt_hf(name, **kwargs):
+def run_rt_scf(name, **kwargs):
+    core.print_out("  Real time code!!! \n\n")
     print("hello world!")
 

@@ -26,4 +26,4 @@
 # @END LICENSE
 #
 
-from .rt_proc import run_rt_hf
+from .rt_proc import run_rt_scf
