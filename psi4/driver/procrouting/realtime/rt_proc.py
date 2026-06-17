@@ -30,10 +30,17 @@ import os
 
 import numpy as np
 
+import psi4
+
 from psi4 import core
 
 
+# Validation error, 90% of them, go find and use that to filer name
 def run_rt_scf(name, **kwargs):
-    core.print_out("  Real time code!!! \n\n")
+    ene, wfn = psi4.energy('scf', return_wfn=True)
+    mints = core.MintsHelper(wfn.basisset())
+    S = mints.ao_overlap()
+    core.print_out("\n  Real time code here!!! \n\n")
     print("hello world!")
+    core.print_out(S.np)
 
